@@ -22,8 +22,7 @@ SAS 里的基础数值模拟，需要使用data步生成数据，proc步分析�
 生成随机变量：rand('distribution',  para1, para1, ...)，例如生成服从二项分布的随机变量，` rand('binomial',0.6,1)`，一次只能生成一个值，所以需要使用do循环，生成设定样本量的随机变量。
 
 - 生成变量服从二项分布的随机变量 $$X$$ ：
-
-```SAS
+{% highlight SAS linenos %}
 data x;
    call streaminit(123);
    do i = 1 to 500;
@@ -33,11 +32,11 @@ data x;
 run;
 proc print data = x (obs=10);
 run;
-```
+{% endhighlight %}
 
 - 模拟线性回归数据并分析数据，模型 $$Y=\beta_0+\beta_1X_1+\beta_2X_2+\beta_3X_3+\beta_4X_4+e$$：
 
-```SAS
+{% highlight SAS linenos %}
 /*数据生成*/
 data lineardata(keep = y x1 x2 x3 x4);
    call streaminit(4321);
@@ -58,11 +57,11 @@ proc reg data=lineardata;
 	ods output ParameterEstimates=simout;
 	model y = x1 x2 x3 x4;
 run;
-```
+{% endhighlight %}
 
 - 重复以上过程1000次，并评价OLS估计的MSE，$$MSE=E((\beta-\hat\beta )^2)$$：
 
-```SAS
+{% highlight SAS linenos %}
 /*数据生成*/
 data lindata;
 	call streaminit(123);
@@ -110,7 +109,7 @@ proc sql;
 quit;
 proc print data=mse;
 run;
-```
+{% endhighlight %}
 
 结果如下：<br>
 ![mse](/images/mse.jpg) 
