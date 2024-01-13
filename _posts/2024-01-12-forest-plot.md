@@ -20,7 +20,7 @@ Introduction to forest plot in R.
 
 <font size="5"> 2.生存分析 </font> 
 
-```r
+{% highlight r linenos %}
 library(survival)
 library(forestploter)
 library(tibble)
@@ -57,20 +57,19 @@ aft_exp_out <- data.frame(HR=exp(-aft_exp[["coefficients"]][-1]),
 aft_exp_out$HRCI <- with(aft_exp_out, sprintf("%.3f(%.3f-%.3f)", HR, Lower, Upper))
 aft_exp_out$pvalue <- with(aft_exp_out, sprintf("%.3f", pvalue))
 aft_exp_out <- rownames_to_column(aft_exp_out, var = "Variable")
-
-```
+{% endhighlight %}
 
 
 <font size="5"> 3.结果整理 </font> 
 
-```r
+{% highlight r linenos %}
 plot_out <- rbind(cox_out, aft_exp_out, aft_wbl_out)
 plot_out$Model <- c(rep("", nrow(plot_out)))
 plot_out$Model[c(1,3,5)] <- c("cox", "aft_exp", "aft_weibull")
 plot_out$` ` <- paste(rep("      ", nrow(plot_out)), collapse = " ")
 colnames(plot_out) <- c("Variable", "HR", "Lower", "Upper", "P value", "HR(95%CI)", "Model", "")
 knitr::kable(plot_out, digits = 3, align = 'c')
-```
+{% endhighlight %}
 
 
 
@@ -88,7 +87,7 @@ knitr::kable(plot_out, digits = 3, align = 'c')
 
 <font size="5">  4.绘制森林图 </font> 
 
-```r
+{% highlight r linenos %}
 mytheme <- forest_theme(base_size = 15, ci_pch = 15, # base_family = "serif",
                         ci_alpha = 1, ci_lty = 1, ci_lwd = 3, ci_Theight = 0.2, 
                         refline_lwd = 2, refline_lty = 1, refline_col = "gray", 
@@ -111,9 +110,6 @@ plot4 <- forest(plot_out[,c(7, 6, 8, 5)],
   insert_text(text = "其他模型...", row = 7, col = 1:4, part = "body", just = "left")
 
 plot(plot4, autofit = TRUE)
-```
+{% endhighlight %}
 
 ![forest plot](/images/forest-plot.png)
-
-
-
