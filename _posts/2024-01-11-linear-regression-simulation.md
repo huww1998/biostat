@@ -21,7 +21,7 @@ SAS 里的基础数值模拟，需要使用data步生成数据，proc步分析�
 
 生成随机变量：rand('distribution',  para1, para1, ...)，例如生成服从二项分布的随机变量，` rand('binomial',0.6,1)`，一次只能生成一个值，所以需要使用do循环，生成设定样本量的随机变量。
 
-- 生成变量服从二项分布的随机变量 \(X$$\) ：
+- 生成变量服从二项分布的随机变量 $X$：
 {% highlight SAS linenos %}
 data x;
    call streaminit(123);
