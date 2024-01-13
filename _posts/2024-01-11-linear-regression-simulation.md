@@ -11,7 +11,7 @@ Introduction to SAS simulation, taking linear regression as an example.
 
 
 
-# SAS Simulation
+### SAS Simulation
 
 SAS 里的基础数值模拟，需要使用data步生成数据，proc步分析数据。
 
