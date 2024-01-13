@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "SAS linear regression simulation"
 date:   2024-01-11 01:30:13 +0800
 categories: SAS
 tags: simulation SAS
 comments: 1
 ---
 
-Introduction to SAS Simulation, taking linear regression as an example.
+Introduction to SAS simulation, taking linear regression as an example.
 
 
 
