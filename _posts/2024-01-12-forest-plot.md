@@ -112,4 +112,4 @@ plot4 <- forest(plot_out[,c(7, 6, 8, 5)],
 plot(plot4, autofit = TRUE)
 {% endhighlight %}
 
-![forest plot](/images/forest-plot.png)
+![forest plot]({{site.baseurl}}/images/forest-plot.png)
