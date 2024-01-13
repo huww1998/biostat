@@ -112,4 +112,4 @@ run;
 {% endhighlight %}
 
 结果如下：<br>
-![mse](/images/mse.jpg) 
+![mse]({{site.baseurl}}/images/mse.jpg) 
