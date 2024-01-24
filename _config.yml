@@ -29,7 +29,7 @@ user_email: "wonderfall2333@gmail.com"
 contact_url: "https://forms.gle/mGPHK4EGencr2QqA6"
 # google_tracking_id: "UA-96359860-1"
 # google_site_verification: "UA-96359860-1"
-# disqus_shortname: "matjek"
+disqus_shortname: "https-huww1998-github-io-biostat"
 
 # Build settings
 markdown: kramdown
